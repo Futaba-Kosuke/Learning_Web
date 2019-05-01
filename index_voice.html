@@ -21,7 +21,7 @@
             speech.start();
         });
 
-        speech.onresult = (e) => {
+        speech.onresult = (e) => {  // results[0][0].transcriptを表示
             speech.stop();
             if (e.results[0].isFinal) {
                 let autotext = e.results[0][0].transcript;
@@ -31,7 +31,7 @@
             }
         };
 
-        speech.onend = () => {
+        speech.onend = () => {  // 終了と同時にspeech.start()を起動
             speech.start();
         };
         
