@@ -20,6 +20,16 @@
         btn.addEventListener('click', () => {
             speech.start();
         });
+
+        speech.onresult = (e) => {
+            speech.stop();
+            if (e.results[0].isFinal) {
+                let autotext = e.results[0][0].transcript;
+                console.log(e);
+                console.log(autotext);
+                content.innerText += '<div>' + autotext + '</div>';
+            }
+        }
         
     </script>
 </body>
