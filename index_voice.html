@@ -29,7 +29,11 @@
                 console.log(autotext);
                 content.innerText += '<div>' + autotext + '</div>';
             }
-        }
+        };
+
+        speech.onend = () => {
+            speech.start();
+        };
         
     </script>
 </body>
