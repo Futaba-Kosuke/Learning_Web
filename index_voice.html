@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang = "ja">
+<head>
+    <meta charset = "utf-8">
+    <title>音声認識サンプル</title>
+    <!-- <script type = "text/javascript" src = index_voice.js></script> -->
+</head>
+<body>
+    <h2>音声認識サンプル</h2>
+    <button id = "btn">start</button>
+    <div id = "content"></div>
+    
+    <script>
+        const speech = new webkitSpeechRecognition();
+        speech.lang = 'ja-JP'
+
+        const btn = document.getElementById('btn');
+        const content = document.getElementById('content');
+
+        btn.addEventListener('click', () => {
+            speech.start();
+        });
+
+        speech.addEventListener('result', (e) => {
+            console.log(e);
+
+        });
+    </script>
+</body>
+</html>
