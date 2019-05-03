@@ -3,20 +3,40 @@
 <head>
     <meta charset = "utf-8">
     <title>Chatapp</title>
+
+    <style>
+        .name {
+            font-size: 10px;
+        }
+        .text {
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
+
+<div>
+    <div>
+        <input type="text" id="username">
+    </div>
+    <div>
+        <textarea id="text" rows="5"></textarea>
+        <button id="output"></button>
+    </div>
+</div>
+
 <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase.js"></script>
 <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyADnRigoK2ox_lX1kwMkZXcsoGvVw5yGZw",
-    authDomain: "learning-web-31836.firebaseapp.com",
-    databaseURL: "https://learning-web-31836.firebaseio.com",
-    projectId: "learning-web-31836",
-    storageBucket: "learning-web-31836.appspot.com",
-    messagingSenderId: "378015738992"
-  };
-  firebase.initializeApp(config);
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyADnRigoK2ox_lX1kwMkZXcsoGvVw5yGZw",
+        authDomain: "learning-web-31836.firebaseapp.com",
+        databaseURL: "https://learning-web-31836.firebaseio.com",
+        projectId: "learning-web-31836",
+        storageBucket: "learning-web-31836.appspot.com",
+        messagingSenderId: "378015738992"
+    };
+    firebase.initializeApp(config);
 </script>
 </body>
 </html>
