@@ -38,6 +38,36 @@
         messagingSenderId: "378015738992"
     };
     firebase.initializeApp(config);
+    
+    // Mag送信準備
+    const newPostRef = firebase.database();
+    let room = "room1";
+
+    const send = document.getElementById("send");
+    const username = document.getElementById("username");
+    const text = document.getElementById("text");
+    const output = document.getElementById("output");
+
+    // Msg送信処理
+    send.addEventListener('click', () => {
+        newPostRef.ref(room).push({
+            username: username.value,
+            text: text.value,
+        });
+        text.value = "";
+    });
+
+    // Msg受信処理
+    newPostRef.ref(room).on("child_added", (data) => {
+        const val = data.val();
+        const key = data.key;
+        let str = "";
+        
+        str += '<div class="name">' + val.username + '</div>';
+        str += '<div class="text">' + val.text + '</div>';
+
+        output.innerHTML += str;  
+    });
 </script>
 </body>
 </html>
